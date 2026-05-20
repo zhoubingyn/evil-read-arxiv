@@ -1,137 +1,372 @@
 language: zh
-vault_path: /home/woan/ObsidianVault
+vault_path: /tmp/obsidian-vault
 papers_dir: 20_Research/Papers
+
+# 期刊来源（通过 Semantic Scholar 搜索）
+journal_sources:
+  - "Computers and Electronics in Agriculture"
+  - "Precision Agriculture"
+  - "Agricultural and Forest Meteorology"
+  - "Remote Sensing of Environment"
+
 research_domains:
-  VLA模型:
+  # ==================== 核心应用领域 ====================
+  "精准农业与智慧农业":
     keywords:
-      - vision language action
-      - VLA
-      - vision-language-action
-      - robotic manipulation
-      - robot learning
-      - embodied AI
-      - embodied agent
-      - action prediction
-      - robot policy
-      - visuomotor
-      - end-to-end robot
-      - language-conditioned policy
-      - RT-2
-      - OpenVLA
-      - Octo
-      - π0
-      - robotic foundation model
-      - manipulation policy
-      - grasping
-      - dexterous manipulation
-      - imitation learning
-      - behavior cloning
-      - robot transformer
+      # 核心概念
+      - "precision agriculture"
+      - "smart farming"
+      - "digital agriculture"
+      - "smart agriculture"
+      - "digital farming"
+      - "site-specific"
+      - "variable rate"
+      # 作物监测
+      - "crop monitoring"
+      - "yield prediction"
+      - "yield estimation"
+      - "crop yield"
+      - "crop mapping"
+      # 土壤管理
+      - "soil mapping"
+      - "soil moisture"
+      - "soil analysis"
+      - "soil nutrient"
+      # 农业机器人
+      - "agricultural robot"
+      - "autonomous tractor"
+      - "harvesting robot"
+      - "field robot"
+      - "agricultural automation"
     arxiv_categories:
-      - cs.RO
-      - cs.CV
-      - cs.AI
-      - cs.LG
-      - cs.CL
-    priority: 5
-  世界模型:
+      - "cs.AI"
+      - "cs.LG"
+      - "cs.RO"
+      - "cs.SY"
+    priority: 10
+
+  "设施农业与智慧温室":
     keywords:
-      - world model
-      - world simulator
-      - video prediction
-      - video generation
-      - physical simulation
-      - dynamics model
-      - environment model
-      - predictive model
-      - neural simulator
-      - Sora
-      - Genie
-      - UniSim
-      - model-based reinforcement learning
-      - imagination
-      - dreamer
-      - latent dynamics
-      - physical reasoning
-      - physics simulation
-      - scene understanding
-      - 3D generation
-      - 4D generation
-      - video diffusion
+      - "greenhouse"
+      - "protected cultivation"
+      - "indoor farming"
+      - "vertical farming"
+      - "controlled environment"
+      - "hydroponics"
+      - "greenhouse monitoring"
+      - "climate control"
+      - "smart greenhouse"
+      - "plant factory"
+      - "soilless cultivation"
+      - "environmental control"
+      - "greenhouse automation"
     arxiv_categories:
-      - cs.CV
-      - cs.AI
-      - cs.LG
-      - cs.RO
-      - cs.GR
-    priority: 5
-  强化学习:
+      - "cs.AI"
+      - "cs.LG"
+      - "cs.SY"
+    priority: 9
+
+  "无损检测与品质检测":
     keywords:
-      - reinforcement learning
-      - reward shaping
-      - policy optimization
-      - deep reinforcement learning
-      - RLHF
-      - PPO
-      - Q-learning
-      - actor-critic
-      - multi-agent reinforcement learning
-      - exploration exploitation
-      - reward function
-      - value function
-      - model-based RL
-      - offline reinforcement learning
-      - test-time reinforcement learning
+      - "non-destructive"
+      - "nondestructive"
+      - "quality detection"
+      - "quality assessment"
+      - "fruit quality"
+      - "grain quality"
+      - "food quality"
+      - "food safety"
+      - "defect detection"
+      - "internal quality"
+      - "maturity detection"
+      - "freshness detection"
+      - "quality grading"
+      - "quality inspection"
+      - "agricultural product quality"
     arxiv_categories:
-      - cs.LG
-      - cs.AI
-      - stat.ML
-      - cs.RO
-      - cs.NE
-    priority: 5
-  灵巧手抓取:
+      - "cs.CV"
+      - "eess.IV"
+      - "cs.LG"
+    priority: 9
+
+  # ==================== 核心技术领域 ====================
+
+  "农业机器视觉":
     keywords:
-      - dexterous manipulation
-      - dexterous grasping
-      - tactile sensing
-      - fingertip perception
-      - multi-finger hand
-      - robotic hand
-      - in-hand manipulation
-      - tactile simulation
-      - vision-tactile
-      - grasp planning
-      - contact-rich manipulation
-      - hand-object interaction
-      - robot dexterity
-      - manipulation policy
-      - reinforcement learning manipulation
+      # 机器视觉/计算机视觉
+      - "computer vision"
+      - "machine vision"
+      - "image processing"
+      - "image analysis"
+      - "visual recognition"
+      - "visual detection"
+      # 植物表型
+      - "plant phenotyping"
+      - "phenotyping"
+      - "plant trait"
+      - "phenotypic trait"
+      # 检测与识别
+      - "plant detection"
+      - "crop detection"
+      - "weed detection"
+      - "disease detection"
+      - "pest detection"
+      - "insect detection"
+      - "fruit detection"
+      - "flower detection"
+      - "leaf detection"
+      - "stem detection"
+      - "root detection"
+      - "seed detection"
+      # 分割与分类
+      - "plant segmentation"
+      - "leaf segmentation"
+      - "crop classification"
+      - "plant classification"
+      - "weed classification"
+      - "disease classification"
+      - "pest classification"
+      - "fruit classification"
+      # 计数与测量
+      - "plant counting"
+      - "fruit counting"
+      - "ear counting"
+      - "leaf counting"
+      - "flower counting"
+      - "biomass estimation"
+      - "growth monitoring"
+      # 农业图像
+      - "agricultural image"
+      - "crop image"
+      - "plant image"
+      - "field image"
+      - "farm image"
+      - "orchard image"
     arxiv_categories:
-      - cs.RO
-      - cs.CV
-      - cs.LG
-      - cs.AI
-    priority: 5
-  绳驱连续体机器人:
+      - "cs.CV"
+      - "cs.AI"
+      - "cs.LG"
+    priority: 10
+
+  "高光谱与多光谱成像技术":
     keywords:
-      - tendon driven continuum robot
-      - hyper-redundant manipulator
-      - cable driven continuum
-      - shape estimation continuum
-      - continuum robot kinematics
-      - tendon actuation
-      - soft continuum manipulator
-      - continuum robot control
-      - Magnus expansion robot
-      - reconfigurable continuum
-      - flexible robot arm
-      - continuum mechanics robotics
-      - wire driven robot
+      # 高光谱
+      - "hyperspectral"
+      - "hyperspectral imaging"
+      - "hyperspectral image"
+      - "hyperspectral data"
+      - "hyperspectral classification"
+      - "hyperspectral unmixing"
+      # 多光谱
+      - "multispectral"
+      - "multispectral imaging"
+      - "multispectral image"
+      - "multispectral data"
+      - "multispectral analysis"
+      # 光谱分析
+      - "spectral analysis"
+      - "spectral imaging"
+      - "spectral feature"
+      - "spectral signature"
+      - "spectral unmixing"
+      - "spectral band"
+      - "spectral resolution"
+      - "spectral index"
+      # 红外与光谱技术
+      - "near-infrared"
+      - "NIR"
+      - "infrared"
+      - "spectroscopy"
+      - "VIS-NIR"
+      - "SWIR"
+      - "LWIR"
+      # 植被指数
+      - "NDVI"
+      - "vegetation index"
+      - "EVI"
+      - "normalized difference vegetation index"
+      # 其他
+      - "wavelength"
+      - "chemometrics"
+      - "spectral reflectance"
+      - "radiometric calibration"
     arxiv_categories:
-      - cs.RO
-      - eess.SY
-      - cs.SY
-    priority: 5
+      - "cs.CV"
+      - "eess.IV"
+      - "cs.LG"
+    priority: 10
+
+  "低空遥感与无人机应用":
+    keywords:
+      - "remote sensing"
+      - "UAV"
+      - "drone"
+      - "unmanned aerial vehicle"
+      - "satellite imagery"
+      - "aerial image"
+      - "vegetation index"
+      - "NDVI"
+      - "crop mapping"
+      - "field monitoring"
+      - "low-altitude"
+      - "UAV remote sensing"
+      - "aerial monitoring"
+      - "crop stress"
+      - "vegetation monitoring"
+      - "drone imagery"
+    arxiv_categories:
+      - "cs.CV"
+      - "eess.IV"
+      - "cs.LG"
+      - "cs.RO"
+    priority: 9
+
+  # ==================== 通用技术领域 ====================
+
+  "农业机器学习与深度学习":
+    keywords:
+      # 基础技术
+      - "deep learning"
+      - "machine learning"
+      - "neural network"
+      - "artificial intelligence"
+      - "AI"
+      # 经典网络架构
+      - "CNN"
+      - "convolutional neural network"
+      - "transformer"
+      - "attention mechanism"
+      - "ResNet"
+      - "Vision Transformer"
+      - "ViT"
+      - "YOLO"
+      - "Faster R-CNN"
+      - "Mask R-CNN"
+      - "U-Net"
+      - "EfficientNet"
+      # 学习范式
+      - "transfer learning"
+      - "fine-tuning"
+      - "data augmentation"
+      - "few-shot learning"
+      - "zero-shot learning"
+      - "self-supervised learning"
+      - "semi-supervised learning"
+      - "unsupervised learning"
+      - "reinforcement learning"
+      - "federated learning"
+      # 计算机视觉任务
+      - "object detection"
+      - "image segmentation"
+      - "semantic segmentation"
+      - "instance segmentation"
+      - "image classification"
+      - "feature extraction"
+      - "pattern recognition"
+      # 多模态
+      - "multimodal"
+      - "multi-modal"
+      - "vision-language"
+      - "cross-modal"
+      - "fusion"
+      - "multimodal learning"
+      # 农业AI
+      - "agricultural AI"
+      - "AI in agriculture"
+      - "intelligent agriculture"
+    arxiv_categories:
+      - "cs.LG"
+      - "cs.AI"
+      - "cs.CV"
+    priority: 10
+
+  "农业物联网与信息技术":
+    keywords:
+      - "IoT"
+      - "internet of things"
+      - "sensor"
+      - "wireless sensor network"
+      - "WSN"
+      - "edge computing"
+      - "smart sensor"
+      - "data fusion"
+      - "agricultural information system"
+      - "precision livestock farming"
+      - "livestock monitoring"
+      - "animal welfare"
+      - "smart farming system"
+      - "agricultural big data"
+    arxiv_categories:
+      - "cs.NI"
+      - "cs.SY"
+      - "cs.DC"
+      - "cs.AI"
+    priority: 7
+
+  # ==================== 交叉应用领域 ====================
+
+  "作物表型与育种":
+    keywords:
+      - "crop phenotyping"
+      - "plant breeding"
+      - "trait extraction"
+      - "genomic selection"
+      - "phenotype prediction"
+      - "crop improvement"
+      - "variety identification"
+      - "seed quality"
+      - "germination detection"
+    arxiv_categories:
+      - "cs.CV"
+      - "cs.LG"
+      - "q-bio.QM"
+    priority: 7
+
+  "农业机器人与智能装备":
+    keywords:
+      - "agricultural robot"
+      - "field robot"
+      - "harvesting robot"
+      - "weeding robot"
+      - "spraying robot"
+      - "planting robot"
+      - "robotic harvesting"
+      - "robotic weeding"
+      - "autonomous navigation"
+      - "path planning"
+      - "obstacle avoidance"
+      - "manipulation"
+      - "agricultural machinery"
+    arxiv_categories:
+      - "cs.RO"
+      - "cs.AI"
+      - "cs.LG"
+    priority: 8
+
+  "智慧养殖与畜牧业":
+    keywords:
+      - "precision livestock farming"
+      - "livestock monitoring"
+      - "animal detection"
+      - "animal tracking"
+      - "animal behavior"
+      - "poultry farming"
+      - "aquaculture"
+      - "fish farming"
+      - "animal welfare"
+      - "livestock health"
+      - "dairy farming"
+      - "cattle monitoring"
+    arxiv_categories:
+      - "cs.AI"
+      - "cs.CV"
+      - "cs.LG"
+    priority: 6
+
 excluded_keywords:
-  - workshop
+  - "workshop"
+  - "medical"
+  - "clinical"
+  - "patient"
+
 semantic_scholar_api_key: ''

@@ -1,0 +1,619 @@
+{
+  "target_date": "2026-05-20",
+  "date_windows": {
+    "recent_30d": {
+      "start": "2026-04-20",
+      "end": "2026-05-20"
+    },
+    "past_year": {
+      "start": "2025-05-20",
+      "end": "2026-04-19"
+    }
+  },
+  "total_recent": 200,
+  "total_hot": 0,
+  "total_unique": 197,
+  "top_papers": [
+    {
+      "id": "http://arxiv.org/abs/2605.19824v1",
+      "title": "From Prompts to Pavement Through Time: Temporal Grounding in Agentic Scene-to-Plan Reasoning",
+      "summary": "Recent attempts to support high-level scene interpretation and planning in Autonomous Vehicles (AVs) using ensembles of Large Language Models (LLMs) and Large Multimodal Models (LMMs) continue to treat time as a secondary property. This lack of temporal grounding leads to inconsistencies in reasoning about continuous actions, undermining both safety and interpretability. This work explores whether temporal conditioning within inter-agent communication can preserve or enhance coherence without introducing degradation in semantic or logical consistency. To investigate this, we introduce three planner architectures with progressively increasing temporal integration and evaluate them on curated subsets of the BDD-X dataset using semantic, syntactic, and logical metrics. Results show that while temporal conditioning reshapes reasoning style, it yields no statistically significant improvements in standard NLP-based correctness metrics. However, qualitative analysis reveals predictive hazard reasoning, stable corrective behavior, and strategic divergence in the Sentinel. These findings clarify the limits of prompt-based temporal grounding and establish the first empirical benchmark for temporal scene-to-plan reasoning.",
+      "authors": [
+        "Ahmed Y. Gado",
+        "Omar Y. Goba",
+        "Alaa Hassanein",
+        "Catherine M. Elias",
+        "Ahmed Hussein"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T13:18:35Z",
+      "published_date": "2026-05-19 13:18:35+00:00",
+      "updated": "2026-05-19T13:18:35Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.19824v1",
+      "url": "http://arxiv.org/abs/2605.19824v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 4.0,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 1.6,
+        "recommendation": 9.87
+      },
+      "matched_domain": "VLA模型",
+      "matched_keywords": [
+        "cs.RO",
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "From_Prompts_to_Pavement_Through_Time_Temporal_Grounding_in_Agentic_Scene-to-Plan_Reasoning"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.19986v1",
+      "title": "Beyond Binary Success: A Diagnostic Meta-Evaluation Framework for Fine-Grained Manipulation",
+      "summary": "Fine-grained manipulation marks a regime where global scene context no longer suffices, and success hinges on the tight coupling of local attribute grounding, high-fidelity spatial perception, and constraint-respecting motor execution. However, current embodied AI benchmarks collapse these capacities into binary success rates, systematically inflating reported capabilities by up to 70% and masking the architectural bottlenecks that impede real-world deployment. We introduce MetaFine, a diagnostic meta-evaluation framework that disentangles manipulation competency along three axes: understanding, perception, and controlled behavior. Built on a compositional task graph, MetaFine absorbs heterogeneous external benchmarks and reconstructs them into diagnostic scenarios of varying complexity under a unified protocol. Evaluating state-of-the-art vision-language-action (VLA) models through this lens exposes severe dimension-specific failures invisible to conventional metrics. Through targeted causal intervention, we identify the visual encoder's ability to preserve local spatial structure as a key bottleneck for fine-grained precision: improving it directly unlocks previously inaccessible manipulation capabilities without modifying downstream policies. MetaFine further supports hybrid real-sim validation, using limited paired real-world rollouts to calibrate scalable simulation-based estimates for more stable physical benchmarking. By shifting evaluation from ranking to diagnosis, MetaFine turns benchmarking into an actionable compass for repairing the layered capacities underlying genuine physical dexterity. The MetaFine framework, benchmarks, and supporting resources will be publicly released at our project page: https://metafine.github.io/.",
+      "authors": [
+        "He-Yang Xu",
+        "Pengyuan Zhang",
+        "Zongyuan Ge",
+        "Xiaoshuai Hao",
+        "Serge Belongie",
+        "Xin Geng",
+        "Yuxin Peng",
+        "Xiu-Shen Wei"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T15:25:13Z",
+      "published_date": "2026-05-19 15:25:13+00:00",
+      "updated": "2026-05-19T15:25:13Z",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.19986v1",
+      "url": "http://arxiv.org/abs/2605.19986v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.9,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 1.6,
+        "recommendation": 9.73
+      },
+      "matched_domain": "VLA模型",
+      "matched_keywords": [
+        "VLA",
+        "vision-language-action",
+        "embodied AI",
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "Beyond_Binary_Success_A_Diagnostic_Meta-Evaluation_Framework_for_Fine-Grained_Manipulation"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.19837v1",
+      "title": "CADENet: Condition-Adaptive Asynchronous Dual-Stream Enhancement Network for Adverse Weather Perception in Autonomous Driving",
+      "summary": "Adverse weather (rain, fog, sand, and snow) degrades camera-based object detection in autonomous vehicles. Existing enhancement-then-detect approaches stall the safety-critical perception loop, violating hard real-time requirements. Progress on this problem is also constrained by an under-recognized evaluation ceiling: ground truth annotated on degraded images cannot credit a detector that recovers objects the annotators themselves could not see, so a genuinely useful enhancement can register as a near-flat F1 gain. This paper presents CADENet (Condition-Adaptive Asynchronous Dual-stream Enhancement Network), a training-free three-thread system: Thread S (YOLOv11n) delivers detections at full frame rate with zero added latency; Thread Q applies condition-adaptive enhancement (CAPE) and fuses results via entropy-guided NMS (EG-NMS) without blocking Thread S; Thread E provides CLIP zero-shot weather classification, so new weather categories require only a new text prompt, with no labeled data and no retraining. Evaluated on 1327 DAWN images (YOLOv11m, IoU = 0.5, confidence = 0.25), CADENet achieves Recall = 0.0103 (micro), F1 = 0.0230 on snow, and F1 = 0.0038 on rain. We formalize the annotation completeness bias on DAWN-class data, so the reported F1 values are lower bounds on the true gain; recall is the annotation-gap-immune headline metric. Thread S sustains approximately 44 FPS regardless of enhancement load. No model retraining or additional sensor hardware is required.",
+      "authors": [
+        "Sherif Khairy",
+        "Catherine M. Elias"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T13:30:28Z",
+      "published_date": "2026-05-19 13:30:28+00:00",
+      "updated": "2026-05-19T13:30:28Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.RO"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.19837v1",
+      "url": "http://arxiv.org/abs/2605.19837v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 4.0,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 0.8,
+        "recommendation": 9.6
+      },
+      "matched_domain": "VLA模型",
+      "matched_keywords": [
+        "cs.RO",
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "CADENet_Condition-Adaptive_Asynchronous_Dual-Stream_Enhancement_Network_for_Adverse_Weather_Perception_in_Autonomous_Driving"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.19768v1",
+      "title": "Minimax Optimal Variance-Aware Regret Bounds for Multinomial Logistic MDPs",
+      "summary": "We study reinforcement learning for episodic Markov Decision Processes (MDPs) whose transitions are modelled by a multinomial logistic (MNL) model. Existing algorithms for MNL mixture MDPs yield a regret of $\\smash{\\tilde{O}(dH^2\\sqrt{T})}$ (Li et al., 2024), where $d$ is the feature dimension, $H$ the episode length, and $T$ the number of episodes. Inspired by the logistic bandit literature (Abeille et al., 2021; Faury et al., 2022; Boudart et al., 2026), we introduce a problem-dependent constant $\\barσ\\_T \\leq 1/2$, measuring the normalised average variance of the optimal downstream value function along the learner's trajectory. We propose an algorithm achieving a regret of $\\smash{\\tilde{O}(dH^2\\barσ\\_T\\sqrt{T})}$, which recovers the existing bound in the worst case and improves upon it for structured MDPs. For instance, for KL-constrained robust MDPs, $\\barσ\\_T = O(H^{-1})$, reducing the horizon dependence by a factor $H$. We further establish a matching $\\smash{Ω(dH^2\\barσ\\_T\\sqrt{T})}$ lower bound, proving minimax optimality (up to logarithmic factors) and fully characterising the regret complexity of MNL mixture MDPs for the first time.",
+      "authors": [
+        "Pierre Boudart",
+        "Pierre Gaillard",
+        "Alessandro Rudi"
+      ],
+      "affiliations": [
+        "SIERRA",
+        "Thoth",
+        "PSL, DI-ENS, Inria"
+      ],
+      "published": "2026-05-19T12:39:32Z",
+      "published_date": "2026-05-19 12:39:32+00:00",
+      "updated": "2026-05-19T12:39:32Z",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "math.ST",
+        "stat.ML"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.19768v1",
+      "url": "http://arxiv.org/abs/2605.19768v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.6,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 1.2,
+        "recommendation": 9.2
+      },
+      "matched_domain": "强化学习",
+      "matched_keywords": [
+        "reinforcement learning",
+        "value function",
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "Minimax_Optimal_Variance-Aware_Regret_Bounds_for_Multinomial_Logistic_MDPs"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.19957v1",
+      "title": "World-Ego Modeling for Long-Horizon Evolution in Hybrid Embodied Tasks",
+      "summary": "World models are widely explored in embodied intelligence, yet they typically predict distinct evolutions of the world and the ego within a single stream, where the world captures persistent instruction-agnostic scene regularities and the ego captures robot-centric instruction-conditioned dynamics. This world-ego entanglement leads to a degradation in long-horizon embodied scenarios, particularly in hybrid tasks with interleaved navigation and manipulation behaviors. In this paper, we introduce \\emph{World-Ego Modeling}, a new conceptual paradigm that decomposes future evolution into world and ego components. We define the world-ego boundary from three perspectives, i.e., motion-, semantic-, and intention-based views, and analyze three disentanglement strategies with post-, pre-, and full disentanglement. Further, we instantiate this paradigm as the World-Ego Model (WEM), a unified embodied world model that couples an implicit separate world-ego planner with a cascade-parallel mixture-of-experts (CP-MoE) diffusion generator. To enable rigorous evaluation, we further construct HTEWorld, the first benchmark for long-horizon world modeling with hybrid navigation-manipulation tasks, providing 125K video clips (over 4.5M frames) with fine-grained action annotations and 300 multi-turn evaluation trajectories (over 2K instructions). Extensive experiments show that WEM achieves state-of-the-art performance on HTEWorld while remaining competitive on existing manipulation-only benchmarks.",
+      "authors": [
+        "Zuyao Lin",
+        "Jianhui Zhang",
+        "Peidong Jia",
+        "Xiaoguang Zhao",
+        "Shanghang Zhang",
+        "Xingyu Chen"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T15:10:27Z",
+      "published_date": "2026-05-19 15:10:27+00:00",
+      "updated": "2026-05-19T15:10:27Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.19957v1",
+      "url": "http://arxiv.org/abs/2605.19957v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.3,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 1.8,
+        "recommendation": 9.0
+      },
+      "matched_domain": "世界模型",
+      "matched_keywords": [
+        "world model",
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "World-Ego_Modeling_for_Long-Horizon_Evolution_in_Hybrid_Embodied_Tasks"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.19823v1",
+      "title": "Smooth Piecewise Cutting for Neural Operator to Handle Discontinuities and Sharp Transitions",
+      "summary": "Neural operators have achieved strong performance in learning solution operators of partial differential equations (PDEs), but their inherently continuous representations struggle to capture discontinuities and sharp transitions. Existing approaches typically approximate such features within continuous function spaces, often requiring increased model capacity and high-resolution data. In this work, we propose Cut-DeepONet, a two-stage training framework that explicitly models discontinuities while reducing learning complexity. Our approach reformulates the problem via a lifting strategy, partitioning the domain into smooth subregions while representing discontinuities as boundaries in a higher-dimensional space. This separation aligns the operator learning task with the inductive bias of neural networks and avoids directly approximating discontinuities. An additional network predicts input-dependent discontinuity locations for unseen inputs, which are then used to guide the neural operator in generating smooth components within each region. Experiments on benchmark PDEs show that Cut-DeepONet outperforms state-of-the-art methods, even when trained on low-resolution datasets. The method excels on problems with discontinuities and sharp transitions, while using fewer trainable parameters. Our results highlight the benefits of changing the representation of operator learning rather than increasing model complexity.",
+      "authors": [
+        "Ha Dang",
+        "Sebastian Schmidt",
+        "Juergen Hesser"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T13:17:59Z",
+      "published_date": "2026-05-19 13:17:59+00:00",
+      "updated": "2026-05-19T13:17:59Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "math.AP",
+        "math.DS",
+        "stat.ML"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.19823v1",
+      "url": "http://arxiv.org/abs/2605.19823v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.0,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 2.3,
+        "recommendation": 8.77
+      },
+      "matched_domain": "强化学习",
+      "matched_keywords": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "Smooth_Piecewise_Cutting_for_Neural_Operator_to_Handle_Discontinuities_and_Sharp_Transitions"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.19805v1",
+      "title": "Latent Laplace Diffusion for Irregular Multivariate Time Series",
+      "summary": "Irregular multivariate time series impose a trade-off for long-horizon forecasting: discrete methods can distort temporal structure via re-gridding, while continuous-time models often require sequential solvers prone to drift. To bridge this gap, we present Latent Laplace Diffusion (LLapDiff), a generative framework that models the target as a low-dimensional latent trajectory, enabling horizon-wide generation without step-by-step integration over physical time. We guide the reverse process utilizing a stable modal parameterization motivated by stochastic port-Hamiltonian dynamics, and parameterize its mean evolution in the Laplace domain via learnable complex-conjugate poles, enabling direct evaluation over irregular timestamps. We also link continuous dynamics to irregular observations through renewal-averaging analysis, which maps sampling gaps to effective event-domain poles and motivates a gap-aware history summarizer. Extensive experiments show that LLapDiff improves over baselines in long-horizon forecasting, and its continuous-time generative nature supports missing-value imputation by querying the same model at historical timestamps. Code is available at https://github.com/pixelhero98/LLapDiffusion.",
+      "authors": [
+        "Zinuo You",
+        "Jin Zheng",
+        "John Cartlidge"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T13:04:53Z",
+      "published_date": "2026-05-19 13:04:53+00:00",
+      "updated": "2026-05-19T13:04:53Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.19805v1",
+      "url": "http://arxiv.org/abs/2605.19805v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.3,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 0.9,
+        "recommendation": 8.7
+      },
+      "matched_domain": "强化学习",
+      "matched_keywords": [
+        "PPO",
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "Latent_Laplace_Diffusion_for_Irregular_Multivariate_Time_Series"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.20158v1",
+      "title": "Rethinking Visual Attribution for Chest X-ray Reasoning in Large Vision Language Models",
+      "summary": "Large Vision Language Models (LVLMs) show promise in medical applications, but their inability to faithfully ground responses in visual evidence raises serious concerns about clinical trustworthiness. While visual attribution methods are widely used to explain LVLM predictions, whether these explanations actually reflect the visual evidence underlying the model's decision is largely unverified, since ground-truth annotations for internal model reasoning are typically unavailable. We address this question for chest X-ray (CXR) reasoning by developing a causal evaluation framework that retains only CXR-VQA samples for which the expert-annotated region is verified, via counterfactual editing, to be causally responsible for the model's prediction. Using this framework across 11 attribution methods, six open-source LVLMs, and two output modes (direct answer and step-by-step reasoning), we find that existing attribution methods often fail to identify the evidence used by LVLMs. To address this failure, we propose MedFocus, a concept-based attribution method that localizes clinically meaningful anatomical regions via unbalanced optimal transport and measures their causal effect on model outputs through targeted interventions. MedFocus produces spatial, concept-level, and token-level attributions and substantially outperforms prior methods, taking a step toward more trustworthy attribution for medical LVLMs. Our data and code are available at https://github.com/gzxiong/medfocus/.",
+      "authors": [
+        "Guangzhi Xiong",
+        "Qiao Jin",
+        "Sanchit Sinha",
+        "Zhiyong Lu",
+        "Aidong Zhang"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T17:46:40Z",
+      "published_date": "2026-05-19 17:46:40+00:00",
+      "updated": "2026-05-19T17:46:40Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.20158v1",
+      "url": "http://arxiv.org/abs/2605.20158v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.0,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 2.0,
+        "recommendation": 8.67
+      },
+      "matched_domain": "VLA模型",
+      "matched_keywords": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "Rethinking_Visual_Attribution_for_Chest_X-ray_Reasoning_in_Large_Vision_Language_Models"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.19932v1",
+      "title": "PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents",
+      "summary": "Large language model (LLM) agents increasingly operate over long and recurring external contexts, like document corpora and code repositories. Across invocations, existing approaches preserve either the agent's trajectory, passive access to raw material, or task-level strategies. None of them preserves what we argue is most needed for repeated same-context workloads: reusable orientation knowledge (e.g., what the context contains, how it is organized, and which entities, constants, and schemas have historically been useful) about the recurring context itself. We introduce PEEK, a system that caches and maintains this orientation knowledge as a context map: a small, constant-sized artifact in the agent's prompt that gives it a persistent peek into the external context. The map is maintained by a programmable cache policy with three modules: a Distiller that extracts transferable knowledge from inference-time signals, a Cartographer that translates it into structured edits, and a priority-based Evictor that enforces a fixed token budget. On long-context reasoning and information aggregation, PEEK improves over strong baselines by 6.3-34.0% while using 93-145 fewer iterations and incurring 1.7-5.8x lower cost than the state-of-the-art prompt-learning framework, ACE. On context learning, PEEK improves solving rate and rubric accuracy by 6.0-14.0% and 7.8-12.1%, respectively, at 1.4x lower cost than ACE. These gains generalize across LMs and agent architectures, including OpenAI Codex, a production-grade coding agent. Together, these results show that a context map helps long-context LLM agents interact with recurring external contexts more accurately and efficiently.",
+      "authors": [
+        "Zhuohan Gu",
+        "Qizheng Zhang",
+        "Omar Khattab",
+        "Samuel Madden"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T14:51:32Z",
+      "published_date": "2026-05-19 14:51:32+00:00",
+      "updated": "2026-05-19T14:51:32Z",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.19932v1",
+      "url": "http://arxiv.org/abs/2605.19932v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.0,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 2.0,
+        "recommendation": 8.67
+      },
+      "matched_domain": "VLA模型",
+      "matched_keywords": [
+        "cs.AI",
+        "cs.LG",
+        "cs.CL"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "PEEK_Context_Map_as_an_Orientation_Cache_for_Long-Context_LLM_Agents"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.19812v1",
+      "title": "FLUXtrapolation: A benchmark on extrapolating ecosystem fluxes",
+      "summary": "We introduce FLUXtrapolation, a benchmark for extrapolating ecosystem fluxes under progressively harder distribution shifts. Ecosystem fluxes are central to understanding the carbon, water, and energy cycles, yet they can only be measured directly at sparsely located measurement towers. Producing global flux estimates therefore requires training models on observed sites using globally available covariates and predicting in unobserved regions, that is, upscaling. Flux upscaling is a challenging domain generalization problem that is affected by a shift in covariate distribution across climates, ecosystem types, and environmental conditions, as well as by conditional shift: important drivers remain unobserved at global scale. We provide a quantitative analysis of both these shifts in $P_X$ and $P_{Y\\mid X}$. FLUXtrapolation is designed based on domain expertise on flux upscaling: it defines temporal, spatial, and temperature-based extrapolation scenarios and evaluates performance across held-out domains, temporal aggregations, and tail errors. In a pilot study, we find that baselines perform similarly under median hourly RMSE, but separate under the proposed tail-focused and multi-scale evaluation. FLUXtrapolation therefore poses a realistic and thus relevant challenge for machine learning methods under distribution shift; at the same time, progress on this benchmark would directly support the scientific goal of improving flux upscaling.",
+      "authors": [
+        "Anya Fries",
+        "Jacob A Nelson",
+        "Martin Jung",
+        "Markus Reichstein",
+        "Jonas Peters"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T13:09:05Z",
+      "published_date": "2026-05-19 13:09:05+00:00",
+      "updated": "2026-05-19T13:09:05Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "stat.AP",
+        "stat.ML"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.19812v1",
+      "url": "http://arxiv.org/abs/2605.19812v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.3,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 0.7,
+        "recommendation": 8.63
+      },
+      "matched_domain": "强化学习",
+      "matched_keywords": [
+        "PPO",
+        "cs.LG",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "FLUXtrapolation_A_benchmark_on_extrapolating_ecosystem_fluxes"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.19944v1",
+      "title": "A Measure-Theoretic Analysis of Reasoning: Structural Generalization and Approximation Limits",
+      "summary": "While empirical scaling laws for LLM reasoning are well-documented, the theoretical mechanisms governing out-of-distribution (OOD) generalization remain elusive. We formalize reasoning via optimal transport, projecting discrete trajectories into a continuous metric space to quantify domain shifts using the Wasserstein-1 distance. Invoking Kantorovich duality, we bound OOD generalization via architectural Lipschitz continuity and functional approximation limits. This exposes two primary constraints. First, position-dependent attention (e.g., Absolute Positional Encoding) fails to preserve shift invariance, yielding an $Ω(1)$ Lipschitz constant and expected risk, whereas shift-invariant mechanisms (e.g., Rotary Embeddings) preserve equivariance and bound the error. Second, by mapping sequential backtracking to a Dyck-$k$ language, we establish a strict circuit depth lower bound for $\\text{TC}^0$ Transformers. Scaling physical layer depth is necessary to avert representation collapse -- a constraint that scaling representation width cannot bypass due to irreducible approximation bounds in Barron spaces. Evaluations across 54 Transformer configurations on combinatorial search corroborate these bounds, demonstrating that generalization risk degrades monotonically with the Wasserstein domain shift.",
+      "authors": [
+        "Yuyang Zhang",
+        "Yifu Zhang",
+        "Xuehai Zhou",
+        "Xiaoyin Chen"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T15:00:51Z",
+      "published_date": "2026-05-19 15:00:51+00:00",
+      "updated": "2026-05-19T15:00:51Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CC",
+        "cs.CL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.19944v1",
+      "url": "http://arxiv.org/abs/2605.19944v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.0,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 1.6,
+        "recommendation": 8.53
+      },
+      "matched_domain": "VLA模型",
+      "matched_keywords": [
+        "cs.AI",
+        "cs.LG",
+        "cs.CL"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "A_Measure-Theoretic_Analysis_of_Reasoning_Structural_Generalization_and_Approximation_Limits"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.19931v1",
+      "title": "StruMPL: Multi-task Dense Regression under Disjoint Partial Supervision and MNAR Labels",
+      "summary": "Estimating forest aboveground biomass (AGB) from Earth observation combines two structurally incompatible label sources: spaceborne lidar provides canopy structure at millions of locations but no biomass estimate, and ground-based plots provide biomass at thousands of biased locations but no metrics of structure. No single training sample carries labels for all target variables, plot labels are missing not at random (MNAR), and biomass is linked to the structural variables by known but biome-specific allometric laws. We formalise this as multi-task dense regression under heterogeneous disjoint partial supervision with MNAR labels and inter-task physical constraints, and propose StruMPL to address it jointly. A shared encoder feeds per-variable regression, imputation, and propensity heads for spatial MNAR correction, and a learnable physics module that evaluates the inter-task constraint on the model's own predictions at every pixel. The supervised loss uses an Augmented IPW (AIPW) pseudo-outcome with stop-gradients on the propensity and on the imputation baseline; we show analytically and empirically that both are necessary for joint optimisation to recover IPW-weighted stationary points while keeping the loss bounded. On two ecologically distinct biomes, StruMPL outperforms ablation variants and the closest published method on AGB RMSE and bias, with a stratified analysis showing AIPW reduces high-AGB bias by ~54%.",
+      "authors": [
+        "Reza M. Asiyabi",
+        "Juan Alberto Molina-Valero",
+        "The SEOSAW Partnership",
+        "Steven Hancock",
+        "Casey M. Ryan"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T14:51:12Z",
+      "published_date": "2026-05-19 14:51:12+00:00",
+      "updated": "2026-05-19T14:51:12Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.19931v1",
+      "url": "http://arxiv.org/abs/2605.19931v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.0,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 1.5,
+        "recommendation": 8.5
+      },
+      "matched_domain": "VLA模型",
+      "matched_keywords": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "StruMPL_Multi-task_Dense_Regression_under_Disjoint_Partial_Supervision_and_MNAR_Labels"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.20086v1",
+      "title": "What Do Evolutionary Coding Agents Evolve?",
+      "summary": "Recent work pairs LLMs with evolutionary search to iteratively generate, modify, and select code using task-specific feedback. These systems have produced strong results in mathematical discovery and algorithm design, yet a fundamental question remains: what do they actually evolve? Progress is typically summarized by the best score a run reaches under a task-specific evaluator, but that score can reflect several different mechanisms: new algorithmic structure, re-tuning an existing strategy, recombining ideas already in the model's internal knowledge, or overfitting to the evaluator. Distinguishing these mechanisms requires inspecting the search process itself, not only its final outcome. We introduce EvoTrace, a dataset of evolutionary coding traces spanning four evolutionary frameworks, reasoning and non-reasoning models, and 16 tasks across mathematics and algorithm design. To analyze these traces, we develop EvoReplay, a replay-based methodology that reconstructs the local search states behind high-scoring solutions and tests controlled interventions, including adjusting constants, removing program components and substituting models or prompting contexts. We annotate every code edit in EvoTrace with one of nine recurring edit types using an LLM-as-judge pipeline validated against blind human re-annotation. Across EvoTrace, most score gains come from a small subset of these edit types. We further find a deterministic cycling pattern: about 30% of code lines added during search are byte-identical re-introductions of previously-deleted lines, present throughout nearly every run. These results show that benchmark gains in evolutionary coding agents can arise from qualitatively different mechanisms, only some of which correspond to new algorithmic structure. EvoTrace enables more diagnostic evaluation of evolutionary coding agents beyond final benchmark scores.",
+      "authors": [
+        "Nico Pelleriti",
+        "Sree Harsha Nelaturu",
+        "Zhanke Zhou",
+        "Zongze Li",
+        "Max Zimmer",
+        "Bo Han",
+        "Sebastian Pokutta"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T16:41:45Z",
+      "published_date": "2026-05-19 16:41:45+00:00",
+      "updated": "2026-05-19T16:41:45Z",
+      "categories": [
+        "cs.NE",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.20086v1",
+      "url": "http://arxiv.org/abs/2605.20086v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.0,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 1.2,
+        "recommendation": 8.4
+      },
+      "matched_domain": "强化学习",
+      "matched_keywords": [
+        "cs.LG",
+        "cs.AI",
+        "cs.NE"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "What_Do_Evolutionary_Coding_Agents_Evolve"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.20009v1",
+      "title": "Training Neural Networks with Optimal Double-Bayesian Learning",
+      "summary": "Backpropagation with gradient descent is a common optimization strategy employed by most neural network architectures in machine learning. However, finding optimal hyperparameters to guide training has proven challenging. While it is widely acknowledged that selecting appropriate parameters is crucial for avoiding overfitting and achieving unbiased outcomes, this choice remains largely based on empirical experiments and experience. This paper presents a new probabilistic framework for the learning rate, a key parameter in stochastic gradient descent. The framework develops classic Bayesian statistics into a double-Bayesian decision mechanism involving two antagonistic Bayesian processes. A theoretically optimal learning rate can be derived from these two processes and used for stochastic gradient descent. Experiments across various classification, segmentation, and detection tasks corroborate the practical significance of the theoretically derived learning rate. The paper also discusses the ramifications of the proposed double-Bayesian framework for network training and model performance.",
+      "authors": [
+        "Vy Bui",
+        "Hang Yu",
+        "Karthik Kantipudi",
+        "Ziv Yaniv",
+        "Stefan Jaeger"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T15:39:36Z",
+      "published_date": "2026-05-19 15:39:36+00:00",
+      "updated": "2026-05-19T15:39:36Z",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.NE"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.20009v1",
+      "url": "http://arxiv.org/abs/2605.20009v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.0,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 1.2,
+        "recommendation": 8.4
+      },
+      "matched_domain": "强化学习",
+      "matched_keywords": [
+        "cs.LG",
+        "cs.AI",
+        "cs.NE"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "Training_Neural_Networks_with_Optimal_Double-Bayesian_Learning"
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.19846v1",
+      "title": "FineBench: Benchmarking and Enhancing Vision-Language Models for Fine-grained Human Activity Understanding",
+      "summary": "Vision-Language Models (VLMs) have demonstrated remarkable capabilities in general video understanding, yet they often struggle with the fine-grained comprehension crucial for real-world applications requiring nuanced interpretation of human actions and interactions. While some recent human-centric benchmarks evaluate aspects of model behaviour such as fairness/ethics, emotion perception, and broader human-centric metrics, they do not combine long-form videos, very dense QA coverage, and frame-level spatial/temporal grounding at scale. To bridge this gap, we introduce FineBench, a human-centric video question answering (VQA) benchmark specifically designed to assess fine-grained understanding. FineBench comprises 199,420 multiple-choice QA pairs densely annotated across 64 long-form videos (15 minutes each), focusing on detailed person movement, person interaction, and object manipulation, including compositional actions. Our extensive evaluation reveals that while proprietary models like GPT-5 achieve respectable performance, current open-source VLMs significantly underperform, struggling particularly with spatial reasoning in multi-person scenes and distinguishing subtle differences in human movements and interactions. To address these identified weaknesses, we propose FineAgent, a modular framework that enhances VLMs by leveraging a Localizer and a Descriptor. Experiments show that FineAgent consistently improves the performance of various open VLMs on FineBench. FineBench provides a rigorous testbed for future research into fine-grained human-centric video understanding, while FineAgent offers a practical approach to enhance such reasoning in current VLMs.",
+      "authors": [
+        "Gueter Josmy Faure",
+        "Min-Hung Chen",
+        "Jia-Fong Yeh",
+        "Hung-Ting Su",
+        "Winston H. Hsu"
+      ],
+      "affiliations": [],
+      "published": "2026-05-19T13:40:26Z",
+      "published_date": "2026-05-19 13:40:26+00:00",
+      "updated": "2026-05-19T13:40:26Z",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2605.19846v1",
+      "url": "http://arxiv.org/abs/2605.19846v1",
+      "source": "arxiv",
+      "scores": {
+        "relevance": 3.0,
+        "recency": 3.0,
+        "popularity": 2.0,
+        "quality": 1.2,
+        "recommendation": 8.4
+      },
+      "matched_domain": "VLA模型",
+      "matched_keywords": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "is_hot_paper": false,
+      "note_filename": "FineBench_Benchmarking_and_Enhancing_Vision-Language_Models_for_Fine-grained_Human_Activity_Understanding"
+    }
+  ]
+}
