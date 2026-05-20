@@ -101,15 +101,60 @@ jobs:
         PYEOF
         
     - name: Send to Feishu
+      env:
+        FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+        BAIDU_TRANS_APPID: ${{ secrets.BAIDU_TRANS_APPID }}
+        BAIDU_TRANS_SECRET: ${{ secrets.BAIDU_TRANS_SECRET }}
       run: |
         python3 << 'PYEOF'
-        import json, requests, os
+        import json, requests, os, hashlib, time, random
         from datetime import datetime
 
         WEBHOOK_URL = os.environ.get('FEISHU_WEBHOOK')
         if not WEBHOOK_URL:
             print("⚠️ 未配置 FEISHU_WEBHOOK")
             exit(0)
+
+        # ========== 百度翻译 ==========
+        BAIDU_APPID = os.environ.get('BAIDU_TRANS_APPID', '')
+        BAIDU_SECRET = os.environ.get('BAIDU_TRANS_SECRET', '')
+        baidu_available = bool(BAIDU_APPID and BAIDU_SECRET)
+        if baidu_available:
+            print("✅ 使用百度翻译 API")
+        else:
+            print("⚠️ 未配置百度翻译，标题保持英文")
+
+        def baidu_translate(text, appid, secret):
+            """百度翻译API"""
+            salt = str(random.randint(32768, 65536))
+            sign_str = appid + text + salt + secret
+            sign = hashlib.md5(sign_str.encode('utf-8')).hexdigest()
+            url = "https://fanyi-api.baidu.com/api/trans/vip/translate"
+            params = {
+                "q": text, "from": "en", "to": "zh",
+                "appid": appid, "salt": salt, "sign": sign
+            }
+            try:
+                resp = requests.get(url, params=params, timeout=10)
+                result = resp.json()
+                if "trans_result" in result:
+                    return result["trans_result"][0]["dst"]
+            except:
+                pass
+            return text
+
+        def translate_titles(papers, title_key="title"):
+            """批量翻译论文标题"""
+            if not baidu_available:
+                return papers
+            for p in papers:
+                title = p.get(title_key, "")
+                if title and len(title) > 5:
+                    p["title_zh"] = baidu_translate(title, BAIDU_APPID, BAIDU_SECRET)
+                    time.sleep(0.3)  # 避免频率限制
+                else:
+                    p["title_zh"] = title
+            return papers
 
         # 读取期刊论文
         try:
@@ -125,6 +170,12 @@ jobs:
                 arxiv_papers = data.get("papers", [])[:10]
         except:
             arxiv_papers = []
+
+        # 翻译标题
+        print("🌐 正在翻译期刊论文标题...")
+        journal_papers = translate_titles(journal_papers)
+        print("🌐 正在翻译 arXiv 论文标题...")
+        arxiv_papers = translate_titles(arxiv_papers)
 
         def build_card():
             elements = []
@@ -146,10 +197,12 @@ jobs:
                 authors = ", ".join(p["authors"][:2]) + (" 等" if len(p["authors"]) > 2 else "")
                 doi = p.get("doi", "")
                 link = f"https://doi.org/{doi}" if doi else p.get("url", "")
-                link_md = f"[{p['title'][:55]}{'...' if len(p['title'])>55 else ''}]({link})" if link else f"**{p['title'][:55]}**"
+                title_zh = p.get("title_zh", p["title"])
+                title_en = p["title"]
+                link_md = f"[{title_zh}]({link})" if link else f"**{title_zh}**"
                 elements.append({
                     "tag": "div",
-                    "text": {"tag": "lark_md", "content": f"**{i}.** {link_md}\n👤 {authors} | 📰 {p['venue']} | 📅 {p.get('publicationDate','')} | 📊 引用: {p.get('citationCount',0)}"}
+                    "text": {"tag": "lark_md", "content": f"**{i}.** {link_md}\n*{title_en[:80]}{'...' if len(title_en)>80 else ''}*\n👤 {authors} | 📰 {p['venue']} | 📅 {p.get('publicationDate','')} | 📊 引用: {p.get('citationCount',0)}"}
                 })
             
             elements.append({"tag": "hr"})
@@ -167,10 +220,12 @@ jobs:
                 domain = p.get("matched_domain", "")
                 scores = p.get("scores", {})
                 score = scores.get("recommendation", 0)
-                link_md = f"[{p.get('title','')[:50]}{'...' if len(p.get('title',''))>50 else ''}]({url})" if url else f"**{p.get('title','')[:50]}**"
+                title_zh = p.get("title_zh", p.get("title", ""))
+                title_en = p.get("title", "")
+                link_md = f"[{title_zh}]({url})" if url else f"**{title_zh}**"
                 elements.append({
                     "tag": "div",
-                    "text": {"tag": "lark_md", "content": f"**{i}.** {link_md}\n👤 {authors} | 🏷️ {domain} | ⭐ {score:.1f} | 🆔 {arxiv_id}"}
+                    "text": {"tag": "lark_md", "content": f"**{i}.** {link_md}\n*{title_en[:70]}{'...' if len(title_en)>70 else ''}*\n👤 {authors} | 🏷️ {domain} | ⭐ {score:.1f} | 🆔 {arxiv_id}"}
                 })
             
             elements.append({"tag": "hr"})
