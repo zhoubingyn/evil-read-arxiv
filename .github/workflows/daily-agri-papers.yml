@@ -29,7 +29,7 @@ jobs:
     - name: Run arXiv search
       run: |
         cd start-my-day/scripts
-        python3 search_arxiv.py --top-n 15
+        python3 search_arxiv.py --top-n 50
       env:
         OBSIDIAN_VAULT_PATH: /tmp/obsidian-vault
         
@@ -142,7 +142,7 @@ jobs:
                 "text": {"tag": "lark_md", "content": "**📖 期刊论文 (Semantic Scholar)**\n来源：Computers and Electronics in Agriculture / Precision Agriculture / Agricultural and Forest Meteorology / Remote Sensing of Environment"}
             })
             
-            for i, p in enumerate(journal_papers[:5], 1):
+            for i, p in enumerate(journal_papers[:10], 1):
                 authors = ", ".join(p["authors"][:2]) + (" 等" if len(p["authors"]) > 2 else "")
                 doi = p.get("doi", "")
                 link = f"https://doi.org/{doi}" if doi else p.get("url", "")
@@ -160,7 +160,7 @@ jobs:
                 "text": {"tag": "lark_md", "content": "**📄 arXiv 预印本论文**\n来源：arXiv (AI/ML/CV/RO 最新预印本)"}
             })
             
-            for i, p in enumerate(arxiv_papers[:5], 1):
+            for i, p in enumerate(arxiv_papers[:10], 1):
                 authors = ", ".join(p.get("authors", [])[:2]) + (" 等" if len(p.get("authors",[])) > 2 else "")
                 arxiv_id = p.get("id", "").split("/")[-1]
                 url = p.get("url", "")
