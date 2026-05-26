@@ -43,7 +43,14 @@ jobs:
             "Computers and Electronics in Agriculture",
             "Precision Agriculture",
             "Agricultural and Forest Meteorology",
-            "Remote Sensing of Environment"
+            "Remote Sensing of Environment",
+            "Food Chemistry",
+            "Artificial Intelligence in Agriculture",
+            "Biosystems Engineering",
+            "ISPRS Journal of Photogrammetry and Remote Sensing",
+            "Journal of Integrative Agriculture",
+            "Plant Phenomics",
+            "Postharvest Biology and Technology"
         ]
 
         AGRI_KEYWORDS = [
@@ -62,7 +69,7 @@ jobs:
 
         for journal in JOURNALS:
             print(f"🔍 {journal}")
-            for q in AGRI_KEYWORDS[:6]:
+            for q in AGRI_KEYWORDS[:4]:
                 params = {
                     "query": q,
                     "fields": FIELDS,
@@ -96,8 +103,8 @@ jobs:
 
         results.sort(key=lambda x: x.get("citationCount", 0), reverse=True)
         with open("/tmp/journal_papers.json", "w", encoding="utf-8") as f:
-            json.dump(results[:10], f, ensure_ascii=False, indent=2)
-        print(f"📊 期刊论文: {len(results[:10])} 篇")
+            json.dump(results[:20], f, ensure_ascii=False, indent=2)
+        print(f"📊 期刊论文: {len(results[:20])} 篇")
         PYEOF
         
     - name: Send to Feishu
@@ -193,7 +200,7 @@ jobs:
                 "text": {"tag": "lark_md", "content": "**📖 期刊论文 (Semantic Scholar)**\n来源：Computers and Electronics in Agriculture / Precision Agriculture / Agricultural and Forest Meteorology / Remote Sensing of Environment"}
             })
             
-            for i, p in enumerate(journal_papers[:10], 1):
+            for i, p in enumerate(journal_papers[:20], 1):
                 authors = ", ".join(p["authors"][:2]) + (" 等" if len(p["authors"]) > 2 else "")
                 doi = p.get("doi", "")
                 link = f"https://doi.org/{doi}" if doi else p.get("url", "")
